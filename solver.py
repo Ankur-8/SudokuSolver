@@ -14,7 +14,7 @@ board = [
 ]
 
 # Visualizes the board
-def print_board(bd):
+def printBoard(bd):
     for i in range(len(bd)):
         if i % 3 == 0 and i != 0:
             print("- - - - - - - - - - - -")
@@ -30,7 +30,7 @@ def print_board(bd):
 
 # Returns the (row, col) pair of first empty slot
 # else returns False
-def find_empty(bd):
+def findEmpty(bd):
     for i in range(len(bd)):
         for j in range(len(bd[0])):
             if bd[i][j] == 0:
@@ -58,6 +58,26 @@ def isValid(bd, val, pos):
                 return False
     return True
 
+def solve(bd):
+    # base case
+    pos = findEmpty(bd)
+    if not pos:
+        return True
+    
+    # recursion
+    for i in range(1,10):
+        if isValid(bd, i, pos):
+            bd[pos[0]][pos[1]] = i
 
-# print_board(board)
-# print(find_empty(board))
+            if solve(bd):
+                return True
+            
+            bd[pos[0]][pos[1]] = 0
+    
+    return False
+    
+printBoard(board)
+solve(board)
+print("-------------------------------------")
+print("-------------------------------------")
+printBoard(board)
