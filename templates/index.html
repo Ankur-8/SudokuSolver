@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Sudoku Solver</title>
+</head>
+<body>
+    <h1>Sudoku Solver</h1>
+    <form action="/solve" method="post">
+        {% for row in range(9) %}
+            <div>
+                {% for col in range(9) %}
+                    <input type="text" name="cell" maxlength="1" size="1">
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit">Solve</button>
+    </form>
+</body>
+</html>
