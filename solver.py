@@ -75,9 +75,3 @@ def solve(bd):
             bd[pos[0]][pos[1]] = 0
     
     return False
-    
-printBoard(board)
-solve(board)
-print("-------------------------------------")
-print("-------------------------------------")
-printBoard(board)
