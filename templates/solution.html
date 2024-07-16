@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Solution</title>
+</head>
+<body>
+    <h1>Solution</h1>
+    <table>
+        {% for row in solution %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Solve another puzzle</a>
+</body>
+</html>

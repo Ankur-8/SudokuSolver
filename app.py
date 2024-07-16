@@ -18,7 +18,6 @@ def solve():
     
     # Solve the Sudoku puzzle using the solver
     solution = solver.solve(grid)
-    
     return render_template('solution.html', solution=solution)
 
 if __name__ == '__main__':
